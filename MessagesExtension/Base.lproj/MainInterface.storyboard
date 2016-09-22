@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9P-4N-bPr">
+                                <state key="normal" title="发送文本消息"/>
+                                <connections>
+                                    <action selector="sendTextMessage:" destination="ObA-dk-sSI" eventType="touchUpInside" id="tHd-1i-wmj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yxi-TZ-rZz">
+                                <state key="normal" title="发送消息体"/>
+                                <connections>
+                                    <segue destination="jVL-xc-tjZ" kind="presentation" id="7uO-4t-lF3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIn-DG-Lsf">
+                                <state key="normal" title="发送网络表情"/>
+                                <connections>
+                                    <action selector="sendUrlMessage:" destination="ObA-dk-sSI" eventType="touchUpInside" id="t7a-aH-uDI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-ah-axs">
+                                <state key="normal" title="发送视频"/>
+                                <connections>
+                                    <action selector="sendVideoMessage:" destination="ObA-dk-sSI" eventType="touchUpInside" id="8HB-1d-J77"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="J9P-4N-bPr" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="98" id="5Rk-UA-IpF"/>
+                            <constraint firstItem="Yxi-TZ-rZz" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="106" id="79B-F5-tKK"/>
+                            <constraint firstItem="hmf-ah-axs" firstAttribute="top" secondItem="FIn-DG-Lsf" secondAttribute="bottom" constant="10" id="EU1-9I-7P1"/>
+                            <constraint firstItem="FIn-DG-Lsf" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="Ezh-iq-LaQ"/>
+                            <constraint firstItem="J9P-4N-bPr" firstAttribute="top" secondItem="zMn-AG-sqS" secondAttribute="top" id="FPh-AA-3rr"/>
+                            <constraint firstItem="J9P-4N-bPr" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="Hbr-LT-ZRf"/>
+                            <constraint firstItem="hmf-ah-axs" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="LBK-J5-aBO"/>
+                            <constraint firstItem="FIn-DG-Lsf" firstAttribute="top" secondItem="Yxi-TZ-rZz" secondAttribute="bottom" constant="10" id="ajV-TR-DIK"/>
+                            <constraint firstItem="Yxi-TZ-rZz" firstAttribute="top" secondItem="J9P-4N-bPr" secondAttribute="bottom" constant="10" id="h0E-ep-nfI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J9P-4N-bPr" secondAttribute="trailing" constant="98" id="iUA-aE-dDY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yxi-TZ-rZz" secondAttribute="trailing" constant="105" id="p5v-1x-udo"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="528"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-293" y="169"/>
+        </scene>
+        <!--Message Layout Style View Controller-->
+        <scene sceneID="5fX-D3-pME">
+            <objects>
+                <viewController id="jVL-xc-tjZ" customClass="MSMessageLayoutStyleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xBo-GO-FtL"/>
+                        <viewControllerLayoutGuide type="bottom" id="N2R-r6-7zH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dhT-NJ-bFa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXa-ez-Zli">
+                                <state key="normal" title="Send Image"/>
+                                <connections>
+                                    <action selector="sendMessageObject:" destination="Hv1-VP-ha7" eventType="touchUpInside" id="vne-nU-LrC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQ1-zM-v0L">
+                                <state key="normal" title="Send Image Title"/>
+                                <connections>
+                                    <action selector="SendMessageImageTitle:" destination="jVL-xc-tjZ" eventType="touchUpInside" id="gWh-ht-I4S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNa-ux-aiy">
+                                <state key="normal" title="Send Image SubTitle"/>
+                                <connections>
+                                    <action selector="sendMessageImageSubTitle:" destination="jVL-xc-tjZ" eventType="touchUpInside" id="aK9-Yh-oUf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hNa-ux-aiy" firstAttribute="top" secondItem="UQ1-zM-v0L" secondAttribute="bottom" constant="10" id="ApG-kU-mVy"/>
+                            <constraint firstItem="iXa-ez-Zli" firstAttribute="top" secondItem="dhT-NJ-bFa" secondAttribute="top" id="O1B-FW-qDS"/>
+                            <constraint firstItem="hNa-ux-aiy" firstAttribute="centerX" secondItem="dhT-NJ-bFa" secondAttribute="centerX" id="aFi-It-hTl"/>
+                            <constraint firstItem="UQ1-zM-v0L" firstAttribute="centerX" secondItem="dhT-NJ-bFa" secondAttribute="centerX" id="jEi-YI-LbB"/>
+                            <constraint firstItem="iXa-ez-Zli" firstAttribute="centerX" secondItem="dhT-NJ-bFa" secondAttribute="centerX" id="tFQ-Cy-tPo"/>
+                            <constraint firstItem="UQ1-zM-v0L" firstAttribute="top" secondItem="iXa-ez-Zli" secondAttribute="bottom" constant="10" id="wO0-tE-bdt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hv1-VP-ha7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="416" y="186"/>
+        </scene>
+    </scenes>
+</document>
